@@ -1,0 +1,11 @@
+.item-container {
+  margin-top: 5px;
+  font-size: 15px;
+  color: white;
+}
+.item-container h1 {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+}
