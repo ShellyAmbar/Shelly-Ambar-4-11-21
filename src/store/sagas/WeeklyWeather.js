@@ -9,7 +9,8 @@ export function* getWeeklyWeather(data) {
   const detailes = false;
   const metric = false;
   const language = "en-us";
-  const apikey = "Zr7Qv2nIfyzbJagXChLwzsEZnZw06b00";
+  const apikey = "XXnIrcGWE6QGJG2xhpfCzgnzsbGofU7e";
+  // process.env.REACT_APP_API_KEY;
   const locationKey = data.payload;
 
   try {

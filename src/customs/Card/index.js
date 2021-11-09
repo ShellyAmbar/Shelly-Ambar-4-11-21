@@ -1,6 +1,7 @@
 import React from "react";
 import "./Card.scss";
 const Index = ({ obj }) => {
+  console.log("obj card - ", obj);
   let maxDeg = (obj.Temperature.Maximum.Value - 32) / 1.8;
   let minDeg = (obj.Temperature.Minimum.Value - 32) / 1.8;
   let fixMaxDeg = (Math.round(maxDeg * 100) / 100).toFixed(2);
@@ -46,8 +47,8 @@ const Index = ({ obj }) => {
             </div>
           </div>
           <div className="card-bottom">
-            <h1 className="temp">{`Max: ${fixMaxDeg}C`}</h1>
-            <h1 className="temp">{`Min: ${fixMinDeg}C`}</h1>
+            <h1 className="temp">{`Max: ${fixMaxDeg}C°`}</h1>
+            <h1 className="temp">{`Min: ${fixMinDeg}C°`}</h1>
           </div>
         </div>
 

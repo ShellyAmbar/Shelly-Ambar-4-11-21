@@ -1,4 +1,4 @@
-import "./WeatherView.css";
+import "./WeatherView.scss";
 import React from "react";
 import GrideView from "../GridView";
 
@@ -37,7 +37,7 @@ const Index = ({
           />
           <div className="description">
             <h2>{`${location.LocalizedName}, ${location.Country.LocalizedName}`}</h2>
-            <h2>{`${currentWeather.Temperature.Metric.Value} ${currentWeather.Temperature.Metric.Unit}`}</h2>
+            <h2>{`${currentWeather.Temperature.Metric.Value} ${currentWeather.Temperature.Metric.Unit}°`}</h2>
           </div>
         </div>
         <div className="header-right">
@@ -54,7 +54,12 @@ const Index = ({
       </div>
       <div className="weather-body">
         <h1>{currentWeather.WeatherText}</h1>
-        <GrideView className="GrideView" data={weeklyWeather} isRow={true} />
+        <GrideView
+          isExpanded={true}
+          className="GrideView"
+          data={weeklyWeather}
+          isRow={true}
+        />
       </div>
     </div>
   );

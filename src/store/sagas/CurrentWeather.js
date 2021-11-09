@@ -5,9 +5,10 @@ import {
 import { getCurrentWeatherCall } from "../calls/CurrentWeather";
 import { call, put } from "redux-saga/effects";
 export function* getCurrentWeather(data) {
- // console.log("getCurrentWeather called", data.payload);
+  // console.log("getCurrentWeather called", data.payload);
   const language = "en-us";
-  const apikey = "Zr7Qv2nIfyzbJagXChLwzsEZnZw06b00";
+  const apikey = "XXnIrcGWE6QGJG2xhpfCzgnzsbGofU7e";
+  // process.env.REACT_APP_API_KEY;
   const detailes = false;
   const locationKey = data.payload;
 

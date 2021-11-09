@@ -7,7 +7,6 @@
   border: 2px white solid;
   width: 100%;
   height: auto;
-
   align-self: center;
 }
 .weather-container h1 {
@@ -75,18 +74,29 @@
   font-size: 15px;
 }
 .add-favorites {
-  height: 100%;
+  height: auto;
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: auto;
+  margin: 10px;
+  padding: 5px;
+}
+.add-favorites:hover {
+  background-color: white;
+  color: black;
+  h1 {
+    color: black;
+  }
 }
 .add-favorites h1 {
-  align-self: center;
-  text-align: end;
   font-size: 20px;
 }
+
 .weather-icon {
   width: 150px;
   height: auto;

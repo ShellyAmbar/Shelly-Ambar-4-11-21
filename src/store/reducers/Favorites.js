@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const Favorites = (state = initialState, action) => {
-  const { type, payload } = action;
+  let { type, payload } = action;
 
   switch (type) {
     case favoritesTypes.GET_FAVORITES: {
@@ -13,15 +13,16 @@ const Favorites = (state = initialState, action) => {
     }
 
     case favoritesTypes.ADD_FAVORITE: {
-      console.log("ADD_FAVORITE", payload);
       console.log("favorites state", state.favoritesList);
-      return { ...state, favoritesList: [...state.favoritesList, payload] };
+      let newObj = { ...payload, idNumber: Date.now() };
+      console.log("ADD_FAVORITE", newObj);
+      return { ...state, favoritesList: [...state.favoritesList, newObj] };
     }
 
     case favoritesTypes.DELETE_FAVORITE: {
-      let idToRemove = payload.id;
+      let idToRemove = payload.idNumber;
       const newList = state.favoritesList.filter(
-        (favorite) => favorite.id !== idToRemove
+        (favorite) => favorite.idNumber !== idToRemove
       );
       return { ...state, favoritesList: [...newList] };
     }

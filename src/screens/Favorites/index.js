@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Favorites.css";
 import GridView from "../../customs/GridView";
-import { getFavorites } from "../../store/actions/Favorites";
+import { getFavorites, deleteFavorite } from "../../store/actions/Favorites";
 
 const Index = () => {
   const dispatch = useDispatch();
@@ -13,11 +13,21 @@ const Index = () => {
   useEffect(() => {
     console.log("favorites in page", favoritesList);
   }, [favoritesList]);
+  const handleRemoveFromFavorites = (obj) => {
+    dispatch(deleteFavorite(obj));
+  };
   return (
     <div className="page-container">
-      {favoritesList && favoritesList.length > 0 && (
-        <GridView data={favoritesList} isRow={false} />
-      )}
+      <div className="favorites-container">
+        {favoritesList && favoritesList.length > 0 && (
+          <GridView
+            isExpanded={false}
+            data={favoritesList}
+            isRow={false}
+            handleClickSimpleCard={handleRemoveFromFavorites}
+          />
+        )}
+      </div>
     </div>
   );
 };

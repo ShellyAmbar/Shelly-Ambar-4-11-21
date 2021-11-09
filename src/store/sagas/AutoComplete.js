@@ -8,7 +8,8 @@ import { getAutoCompleteCall } from "../calls/AutoComplete";
 export function* getAutoComplete(data) {
   // console.log("getAutoComplete called", data.payload);
   const language = "en-us";
-  const apikey = "Zr7Qv2nIfyzbJagXChLwzsEZnZw06b00";
+  const apikey = "XXnIrcGWE6QGJG2xhpfCzgnzsbGofU7e";
+  // process.env.REACT_APP_API_KEY;
   const stringToSearch = data.payload;
   try {
     const response = yield call(
